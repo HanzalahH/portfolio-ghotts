@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Syed Hanzala Hussain | Application Penetration Tester</title>
+<meta name="description" content="Syed Hanzala Hussain — Application Penetration Tester. eWPTXv3 & BSCP Certified, CREST CPSA. Specializing in web, API, cloud, and mobile application security testing." />
+<meta name="theme-color" content="#0a0e0f" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Syed Hanzala Hussain | Application Penetration Tester" />
+<meta property="og:description" content="Offensively Defensive — Breaking things so others don't have to. Application Penetration Tester specializing in web, API, cloud & mobile security." />
+<meta property="og:image" content="/favicon.svg" />
+<meta property="og:url" content="https://ghostblade.dev/" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Syed Hanzala Hussain | Application Penetration Tester" />
+<meta name="twitter:description" content="Offensively Defensive — Breaking things so others don't have to." />
+<meta name="twitter:image" content="/favicon.svg" />
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="grain-overlay" aria-hidden="true"></div>
+<div class="scan-cursor" id="scanCursor" aria-hidden="true"></div>
+
+<a class="skip-link" href="index.html#main">Skip to content</a>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html#hero" class="logo-mark" aria-label="Syed Hanzala Hussain — home">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 2L30 8V16C30 23.5 24.5 29.5 17 32C9.5 29.5 4 23.5 4 16V8L17 2Z" stroke="#00fff2" stroke-width="1.6" fill="rgba(0,255,242,0.05)"/>
+        <path d="M12 17L15.5 20.5L22 13" stroke="#39ff14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">SHH<span class="cursor-blink">_</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#skills" class="nav-link">Skills</a>
+      <a href="index.html#certifications" class="nav-link">Certifications</a>
+      <a href="index.html#experience" class="nav-link">Experience</a>
+      <a href="index.html#clients" class="nav-link">Clients</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="navbar-actions">
+      <a href="https://agent-6a6e00f67d0459cf638510eb--hanzalahussain.netlify.app/assets/resume.pdf" class="btn btn-outline btn-sm" download>
+        <span>Download Resume</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav aria-label="Mobile">
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="index.html#skills" class="mobile-link">Skills</a>
+      <a href="index.html#certifications" class="mobile-link">Certifications</a>
+      <a href="index.html#experience" class="mobile-link">Experience</a>
+      <a href="index.html#clients" class="mobile-link">Clients</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+      <a href="https://agent-6a6e00f67d0459cf638510eb--hanzalahussain.netlify.app/assets/resume.pdf" class="btn btn-outline btn-sm mobile-resume" download>Download Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+    <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content container">
+      <div class="hero-text">
+        <p class="hero-eyebrow">
+          <span class="dot-pulse"></span> Available for engagements
+        </p>
+        <h1 class="hero-name">Syed Hanzala Hussain</h1>
+        <p class="hero-title">Application Penetration Tester <span class="sep">|</span> eWPTXv3 &amp; BSCP Certified <span class="sep">|</span> CREST CPSA</p>
+        <p class="hero-subtagline">Offensively Defensive — <span class="accent-green">Breaking things so others don't have to.</span></p>
+        <p class="hero-oneliner">Cybersecurity professional with 5 years in the field and nearly 3 years hands-on in penetration testing, specializing in web applications, APIs, cloud environments, and Android/iOS mobile applications.</p>
+
+        <div class="hero-cta">
+          <a href="index.html#clients" class="btn btn-primary">View My Work</a>
+          <a href="index.html#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+
+        <div class="location-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-13A7 7 0 1 0 5 9c0 5.42 7 13 7 13Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          Karachi, Pakistan — currently based in Dubai, UAE
+        </div>
+      </div>
+
+      <div class="terminal-window" role="img" aria-label="Terminal window showing whoami output for Syed Hanzala Hussain, Application Penetration Tester">
+        <div class="terminal-bar">
+          <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+          <span class="terminal-title">shh@offsec:~</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="term-line"><span class="prompt">shh@offsec</span><span class="prompt-sep">:~$</span> <span id="typedLine"></span><span class="type-cursor">&#9608;</span></div>
+          <div class="term-output" id="termOutput"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-heading" data-decrypt="About Me">About Me</h2>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I'm a cybersecurity professional and Application Penetration Tester with 5 years of cybersecurity experience and nearly 3 years of hands-on penetration testing experience. I specialize in assessing web applications, APIs, cloud environments, and Android/iOS mobile applications — conducting both internal and external penetration tests.</p>
+          <p>My work spans testing complex enterprise architectures, identifying real-world attack paths, and applying adaptive penetration testing strategies tailored to different technologies, architectures, and business environments.</p>
+          <p>I'm passionate about offensive security and continuously expand my expertise by learning new technologies, testing methodologies, and emerging threats, while conducting hands-on research to stay ahead of the evolving cybersecurity landscape.</p>
+        </div>
+        <div class="about-stats reveal-up">
+          <div class="stat-card">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Years in Cybersecurity</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">~3</span>
+            <span class="stat-label">Years Hands-on Pentesting</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Attack Surfaces: Web, API, Cloud, Mobile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-heading" data-decrypt="Top Skills">Top Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-bar-list">
+          <div class="skill-item">
+            <div class="skill-item-head"><span>Web Application Security Assessment</span><span class="skill-pct">95%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-head"><span>Cloud Security Assessments</span><span class="skill-pct">85%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-head"><span>Cloud Penetration Testing</span><span class="skill-pct">85%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-head"><span>Mobile Application Security (Android &amp; iOS)</span><span class="skill-pct">80%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-head"><span>API Security Testing</span><span class="skill-pct">90%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-head"><span>Business Logic Flaw Identification</span><span class="skill-pct">92%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-head"><span>Enterprise Architecture Testing (Internal &amp; External)</span><span class="skill-pct">88%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+        </div>
+
+        <div class="radar-wrap reveal-up">
+          <svg id="radarChart" viewBox="0 0 320 320" role="img" aria-label="Radar chart of security skills"></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <h2 class="section-heading" data-decrypt="Certifications">Certifications</h2>
+      <p class="section-sub">Industry-recognized credentials validating hands-on offensive security capability.</p>
+      <div class="cert-grid">
+        <article class="cert-card reveal-up">
+          <div class="cert-card-inner">
+            <div class="cert-badge-img">
+              <img src="assets/certs/bscp-badge.jpg" alt="Burp Suite Certified Practitioner (BSCP)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-fallback" aria-hidden="true">BSCP</div>
+            </div>
+            <h3 class="cert-name">Burp Suite Certified Practitioner</h3>
+            <p class="cert-issuer">PortSwigger — BSCP</p>
+          </div>
+        </article>
+
+        <article class="cert-card reveal-up">
+          <div class="cert-card-inner">
+            <div class="cert-badge-img">
+              <img src="assets/certs/ewptxv3-badge.jpg" alt="eWPTXv3 Certification" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-fallback" aria-hidden="true">eWPTXv3</div>
+            </div>
+            <h3 class="cert-name">eWPTXv3</h3>
+            <p class="cert-issuer">INE / eLearnSecurity</p>
+          </div>
+        </article>
+
+        <article class="cert-card reveal-up">
+          <div class="cert-card-inner">
+            <div class="cert-badge-img">
+              <img src="assets/certs/crest-cpsa-badge.png" alt="CREST Practitioner Security Analyst (CPSA)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-fallback" aria-hidden="true">CPSA</div>
+            </div>
+            <h3 class="cert-name">CREST Practitioner Security Analyst</h3>
+            <p class="cert-issuer">CREST — CPSA</p>
+          </div>
+        </article>
+
+        <article class="cert-card reveal-up">
+          <div class="cert-card-inner">
+            <div class="cert-badge-img">
+              <img src="assets/certs/ztm-ethical-hacking-badge.jpg" alt="Complete Ethical Hacking Bootcamp — Zero To Mastery (ZTM)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-fallback" aria-hidden="true">ZTM</div>
+            </div>
+            <h3 class="cert-name">Complete Ethical Hacking Bootcamp</h3>
+            <p class="cert-issuer">Zero To Mastery (ZTM)</p>
+          </div>
+        </article>
+
+        <article class="cert-card reveal-up">
+          <div class="cert-card-inner">
+            <div class="cert-badge-img">
+              <img src="assets/certs/api-pentesting-12hrs.png" alt="API Penetration Testing — 12 Hours Course" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-fallback" aria-hidden="true">API PT</div>
+            </div>
+            <h3 class="cert-name">API Penetration Testing (12 Hours)</h3>
+            <p class="cert-issuer">Course Certificate</p>
+          </div>
+        </article>
+
+        <article class="cert-card reveal-up">
+          <div class="cert-card-inner">
+            <div class="cert-badge-img">
+              <img src="assets/certs/owasp-api-top10-2hrs.png" alt="OWASP API Security Top 10 — 2 Hours Course" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="cert-fallback" aria-hidden="true">OWASP API</div>
+            </div>
+            <h3 class="cert-name">OWASP API Security Top 10 (2 Hours)</h3>
+            <p class="cert-issuer">Course Certificate</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-heading" data-decrypt="Experience">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Current</span>
+            <h3 class="timeline-role">Application Penetration Tester</h3>
+            <p class="timeline-org">Haumaru Technologies Limited</p>
+            <p class="timeline-meta">January 2026 – Present · 7 months · Dubai, United Arab Emirates</p>
+            <p class="timeline-desc">Role has evolved into an Application Penetration Tester, with an expanded scope covering mobile application security testing (Android/iOS) in addition to web applications. The role is expected to grow further to include thick client application security testing — end-to-end assessment of application architectures, APIs, authentication mechanisms, and business logic flaws across multiple platforms.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Web Application Penetration Tester</h3>
+            <p class="timeline-org">Haumaru Technologies Limited</p>
+            <p class="timeline-meta">November 2024 – January 2026 · 1 year 3 months · Dubai, United Arab Emirates</p>
+            <p class="timeline-desc">Performed hands-on security assessments of web applications to identify, exploit, and document vulnerabilities. Collaborated with development teams to ensure effective remediation, and continuously researched new attack techniques, bypasses, and emerging technologies to stay ahead of evolving threats.</p>
+          </div>
+        </div>
+
+        <div class="timeline-total reveal-up">Total tenure at Haumaru Technologies Limited: <strong>1 year 9 months</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONORS / BUG BOUNTY -->
+  <section class="section" id="honors">
+    <div class="container">
+      <h2 class="section-heading" data-decrypt="Bug Bounty &amp; Honors">Bug Bounty &amp; Honors</h2>
+      <div class="honors-strip">
+        <div class="honor-badge reveal-up">
+          <div class="honor-logo"><img src="assets/logos/looka.png" alt="Looka" loading="lazy" /></div>
+          <div><strong>Looka</strong><span>Hall of Fame + Monetary Reward</span></div>
+        </div>
+        <div class="honor-badge reveal-up">
+          <div class="honor-logo"><img src="assets/logos/lucid-logo.png" alt="Looka" loading="lazy" /></div>
+          <div><strong>Lucid Motors</strong><span>Hall of Fame</span></div>
+        </div>
+        <div class="honor-badge reveal-up">
+          <div class="honor-logo"><img src="assets/logos/growthbook.png" alt="Growthbook" loading="lazy" /></div>
+          <div><strong>Growthbook</strong><span>Monetary Reward</span></div>
+        </div>
+        <div class="honor-badge reveal-up">
+          <div class="honor-logo"><img src="assets/logos/erasmus.png" alt="Erasmus University Rotterdam" loading="lazy" /></div>
+          <div><strong>eur.nl</strong><span>Hall of Fame — Erasmus University Rotterdam</span></div>
+        </div>
+        <div class="honor-badge reveal-up">
+          <div class="honor-logo"><img src="assets/logos/csb.png" alt="U.S. Chemical Safety and Hazard Investigation Board" loading="lazy" /></div>
+          <div><strong>U.S. CSB</strong><span>Hall of Fame — Chemical Safety and Hazard Investigation Board</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="section section-alt" id="clients">
+    <div class="container">
+      <h2 class="section-heading" data-decrypt="Clients &amp; Organizations I've Worked With">Clients &amp; Organizations I've Worked With</h2>
+      <p class="section-sub">A selection of the organizations and companies whose security I've been trusted to test.</p>
+    </div>
+    <div class="marquee" aria-label="Client logos">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <div class="logo-badge"><img src="assets/logos/morohub.png" alt="MoroHub" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','MoroHub');" /></div>
+          <div class="logo-badge"><img src="assets/logos/ajmanbank.png" alt="Ajman Bank" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Ajman Bank');" /></div>
+          <div class="logo-badge"><img src="assets/logos/bppra.png" alt="BPPRA" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','BPPRA');" /></div>
+          <div class="logo-badge"><img src="assets/logos/xplor.png" alt="Xplor" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Xplor');" /></div>
+          <div class="logo-badge"><img src="assets/logos/ecza-logo.png" alt="ECZA — KSA Government" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','ECZA — KSA Gov');" /></div>
+          <div class="logo-badge"><img src="assets/logos/onix.png" alt="Onix" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Onix');" /></div>
+          <div class="logo-badge"><img src="assets/logos/topmax.png" alt="Topmax" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Topmax');" /></div>
+          <div class="logo-badge"><img src="assets/logos/nahdi.png" alt="Nahdi" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Nahdi');" /></div>
+          <div class="logo-badge"><img src="assets/logos/medocs.png" alt="Medocs" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Medocs');" /></div>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <div class="logo-badge"><img src="assets/logos/morohub.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','MoroHub');" /></div>
+          <div class="logo-badge"><img src="assets/logos/ajmanbank.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Ajman Bank');" /></div>
+          <div class="logo-badge"><img src="assets/logos/bppra.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','BPPRA');" /></div>
+          <div class="logo-badge"><img src="assets/logos/xplor.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Xplor');" /></div>
+          <div class="logo-badge"><img src="assets/logos/ecza-logo.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','ECZA — KSA Gov');" /></div>
+          <div class="logo-badge"><img src="assets/logos/onix.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Onix');" /></div>
+          <div class="logo-badge"><img src="assets/logos/topmax.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Topmax');" /></div>
+          <div class="logo-badge"><img src="assets/logos/nahdi.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Nahdi');" /></div>
+          <div class="logo-badge"><img src="assets/logos/medocs.png" alt="" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.setAttribute('data-name','Medocs');" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-heading" data-decrypt="Let's Secure Something Together">Let's Secure Something Together</h2>
+      <div class="contact-grid">
+        <form class='contact-form reveal-up' id='contactForm' method='POST' name='contact'>
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="honeypot-field" aria-hidden="true">
+            <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
+
+          <div class="term-field">
+            <label for="name"><span class="field-prompt">$</span> name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="term-field">
+            <label for="email"><span class="field-prompt">$</span> email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="term-field">
+            <label for="message"><span class="field-prompt">$</span> message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <span>Send Transmission</span>
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-info reveal-up">
+          <h3>Direct Channels</h3>
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:ghostblade1of1@gmail.com" class="contact-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3V6Z" stroke="currentColor" stroke-width="1.6"/><path d="m3 6 9 7 9-7" stroke="currentColor" stroke-width="1.6"/></svg>
+                ghostblade1of1@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+923313309602" class="contact-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 2 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6"/></svg>
+                +92 331 3309602
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/ghostbalde" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 0 1 4 0V17M11 12.5V17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                linkedin.com/in/ghostbalde
+              </a>
+            </li>
+            <li class="contact-link contact-link-disabled" aria-disabled="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.9-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.71 1.03 1.6 1.03 2.7 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/></svg>
+                GitHub — coming soon
+              </li>
+          </ul>
+
+          <div class="availability-panel">
+            <span class="dot-pulse"></span>
+            Status: <strong>Available for engagements</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-sig">Syed Hanzala Hussain — Application Penetration Tester. <span class="accent-cyan">Offensively Defensive.</span></p>
+    <p class="footer-copy">&copy; <span id="footerYear"></span> Syed Hanzala Hussain. All rights reserved.</p>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>cd ~</span>
+    </button>
+  </div>
+</footer>
+
+<div class="konami-toast" id="konamiToast" role="alert" aria-live="assertive">
+  <span class="konami-glitch">ACCESS GRANTED</span>
+  <span class="konami-sub">root privileges unlocked</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
