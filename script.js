@@ -363,4 +363,400 @@
       konamiPos = (key === konamiSeq[0]) ? 1 : 0;
     }
   });
+
+/* =============================================================
+   GSAP CYBERPUNK ANIMATIONS
+   ============================================================= */
+(function () {
+  // Bail out if user prefers reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Register ScrollTrigger globally
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* -------------------------------------------------
+     1️⃣ SKILLS SECTION – neon bar fill + scanline + count‑up
+     ------------------------------------------------- */
+  function initSkills() {
+    const bars = document.querySelectorAll('.skill-fill');
+    if (!bars.length) return;
+
+    bars.forEach(bar => {
+      const targetWidth = parseFloat(bar.getAttribute('data-width')) || 0;
+
+      // Wrapper for scanline overlay
+      const wrapper = bar.parentElement;
+      if (!wrapper.classList.contains('skill-track')) {
+        const track = document.createElement('div');
+        track.className = 'skill-track';
+        track.innerHTML = '<div class="skill-fill" data-width="' + targetWidth + '"></div><div class="scanline"></div>';
+        wrapper.replaceChild(track, bar);
+        // Re‑reference the new fill element
+        const newFill = track.querySelector('.skill-fill');
+        bar = newFill;
+      }
+
+      // Animate width with glow
+      gsap.fromTo(
+        bar,
+        { width: '0%' },
+        {
+          width: targetWidth + '%',
+          ease: 'power3.out',
+          duration: 1.5,
+          scrollTrigger: {
+            trigger: bar,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+          onUpdate: () => {
+            // optional: add a subtle neon glow while animating
+            bar.classList.toggle('neon-glow', bar.style.width !== '0%');
+          }
+        }
+      );
+
+      // Scanline animation (pure CSS, just ensure element exists)
+      const scan = wrapper.querySelector('.scanline');
+      if (scan) scan.classList.add('scanline');
+    });
+
+    // Count‑up numbers (stats) – same logic as skill bars
+    const stats = document.querySelectorAll('.stat-number');
+    stats.forEach(num => {
+      const target = parseFloat(num.textContent) || 0;
+      num.textContent = '0';
+      gsap.fromTo(
+        num,
+        { innerText: 0 },
+        {
+          innerText: target,
+          duration: 1.5,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: num,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+          snap: { innerText: 1 },
+          onUpdate: function () {
+            num.textContent = Math.round(this.target.innerText);
+          }
+        }
+      );
+    });
+  }
+
+  /* -------------------------------------------------
+     2️⃣ CERTIFICATIONS SECTION – flip card + pulse glow + stagger
+     ------------------------------------------------- */
+  function initCertifications() {
+    const cards = document.querySelectorAll('.cert-card');
+    if (!cards.length) return;
+
+    cards.forEach(card => {
+      // Wrap inner content for flip effect
+      const inner = card.querySelector('.cert-card-inner');
+      if (!inner) return;
+
+      // Build flip markup
+      const front = inner.cloneNode(true);
+      const back = document.createElement('div');
+      back.className = 'cert-card-inner flip-card__back';
+      back.innerHTML = `<div class="cert-badge-img"><div class="cert-fallback" aria-hidden="true">${card.dataset.backup || '??'}</div></div>
+                        <h3 class="cert-name">${card.querySelector('.cert-name')?.textContent || ''}</h3>
+                        <p class="cert-issuer">${card.querySelector('.cert-issuer')?.textContent || ''}</p>`;
+
+      // Replace inner with flip container
+      const flipWrapper = document.createElement('div');
+      flipWrapper.className = 'flip-card';
+      flipWrapper.appendChild(front);
+      flipWrapper.appendChild(back);
+      card.innerHTML = ''; // clear
+      card.appendChild(flipWrapper);
+
+      // Hover flip + pulse glow
+      flipWrapper.addEventListener('mouseenter', () => {
+        flipWrapper.classList.add('flipped');
+        flipWrapper.classList.add('pulse-glow');
+      });
+      flipWrapper.addEventListener('mouseleave', () => {
+        flipWrapper.classList.remove('flipped');
+        flipWrapper.classList.remove('pulse-glow');
+      });
+
+      // Staggered pop‑in on scroll
+      gsap.fromTo(
+        flipWrapper,
+        { scale: 0.8, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: flipWrapper,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          }
+        }
+      );
+    });
+  }
+
+  /* -------------------------------------------------
+     3️⃣ EXPERIENCE TIMELINE – line draw, alternate slide, pulse dots
+     ------------------------------------------------- */
+  function initExperience() {
+    const timeline = document.querySelector('.timeline');
+    if (!timeline) return;
+
+    const line = timeline.querySelector('.timeline-line');
+    if (line) {
+      // Draw line from top to bottom on scroll
+      gsap.fromTo(
+        line,
+        { height: '0%' },
+        {
+          height: '100%',
+          duration: 1.5,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: timeline,
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: true,
+          }
+        }
+      );
+    }
+
+    const items = timeline.querySelectorAll('.timeline-item');
+    items.forEach((item, i) => {
+      const direction = i % 2 === 0 ? '-100%' : '100%'; // left/right alternate
+      gsap.fromTo(
+        item,
+        { x: direction, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          }
+        }
+      );
+
+      // Pulse the node (dot)
+      const node = item.querySelector('.timeline-node');
+      if (node) {
+        node.classList.add('pulse-glow');
+      }
+    });
+  }
+
+  /* -------------------------------------------------
+     4️⃣ ABOUT ME – typewriter, glitch words, count‑up stats, scan reveal
+     ------------------------------------------------- */
+  function initAbout() {
+    const intro = document.querySelector('.hero-oneliner');
+    if (intro) {
+      const fullText = intro.textContent.trim();
+      intro.textContent = '';
+      const chars = [...fullText];
+
+      gsap.to(chars, {
+        duration: 0.05,
+        stagger: 0.05,
+        onUpdate: function () {
+          intro.textContent = chars.slice(0, this.progress() * chars.length).join('');
+        },
+        onComplete: () => {
+          intro.textContent = fullText;
+        }
+      });
+    }
+
+    // Glitch on keywords – wrap target words in <span class="glitch" data-text="WORD">WORD</span>
+    const glossary = document.querySelectorAll('.about-copy .glitch');
+    glossary.forEach(el => {
+      el.setAttribute('data-text', el.textContent);
+    });
+
+    // Stats count‑up (reuse same logic as skills)
+    const aboutStats = document.querySelectorAll('.about-stats .stat-number');
+    aboutStats.forEach(num => {
+      const target = parseFloat(num.textContent) || 0;
+      num.textContent = '0';
+      gsap.fromTo(
+        num,
+        { innerText: 0 },
+        {
+          innerText: target,
+          duration: 1.5,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: num,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+          snap: { innerText: 1 },
+          onUpdate: function () {
+            num.textContent = Math.round(this.target.innerText);
+          }
+        }
+      );
+    });
+
+    // Scanning line that reveals text (simple linear gradient moving)
+    const aboutCopy = document.querySelector('.about-copy');
+    if (aboutCopy) {
+      const scan = document.createElement('div');
+      scan.className = 'scanline';
+      scan.style.position = 'absolute';
+      scan.style.inset = '0';
+      scan.style.pointerEvents = 'none';
+      scan.style.background = 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,255,255,.2) 2px, rgba(0,255,255,.2) 4px';
+      scan.style.backgroundSize = '200% 100%';
+      scan.style.animation = 'scanMove 4s linear infinite';
+      aboutCopy.style.position = 'relative';
+      aboutCopy.appendChild(scan);
+    }
+  }
+
+  /* -------------------------------------------------
+     5️⃣ CLIENTS / BOUNTY LOGOS – shimmer on scroll, hover glow/scale, optional 3D tilt
+     ------------------------------------------------- */
+  function initLogos() {
+    const logos = document.querySelectorAll('.logo-badge img, .logo-badge.logo-fallback');
+    if (!logos.length) return;
+
+    logos.forEach(img => {
+      const wrapper = img.parentElement;
+
+      // Shimmer on scroll
+      gsap.fromTo(
+        wrapper,
+        { opacity: 0.4, scale: 0.95 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: wrapper,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          }
+        }
+      );
+
+      // Hover glow + scale
+      wrapper.addEventListener('mouseenter', () => {
+        wrapper.classList.add('neon-glow');
+        gsap.to(wrapper, { scale: 1.05, duration: 0.3 });
+      });
+      wrapper.addEventListener('mouseleave', () => {
+        wrapper.classList.remove('neon-glow');
+        gsap.to(wrapper, { scale: 1, duration: 0.3 });
+      });
+
+      // Optional 3D tilt – uncomment if you want it
+      /*
+      wrapper.addEventListener('mousemove', e => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rx = (y / rect.height) * 10;
+        const ry = (x / rect.width) * -10;
+        gsap.to(wrapper, { rotationX: rx, rotationY: ry, duration: 0.4 });
+      });
+      wrapper.addEventListener('mouseleave', () => {
+        gsap.to(wrapper, { rotationX: 0, rotationY: 0, duration: 0.4 });
+      });
+      */
+    });
+  }
+
+  /* -------------------------------------------------
+     6️⃣ CONTACT FORM – focus glow, submit pulse, glitch on success
+     ------------------------------------------------- */
+  function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const inputs = form.querySelectorAll('input, textarea');
+    inputs.forEach(el => {
+      el.addEventListener('focus', () => {
+        el.classList.add('neon-glow');
+      });
+      el.addEventListener('blur', () => {
+        el.classList.remove('neon-glow');
+      });
+    });
+
+    const status = document.getElementById('formStatus');
+    if (status) {
+      // Show a quick “transmission” pulse on submit success
+      const originalHandler = form.onsubmit;
+      form.onsubmit = function (e) {
+        e.preventDefault();
+        // Simulate submit (your original AJAX stays)
+        const data = new URLSearchParams(new FormData(form));
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: data
+        })
+          .then(r => {
+            if (r.ok) {
+              status.textContent = '> Message sent. Standing by for response.';
+              // Pulse animation
+              gsap.fromTo(status, { scale: 1, opacity: 1 }, {
+                scale: 1.3,
+                opacity: 0.8,
+                duration: 0.6,
+                yoyo: true,
+                repeat: 1,
+                ease: 'power1.out',
+                onComplete: () => {
+                  gsap.to(status, { scale: 1, opacity: 1, duration: 0.3 });
+                }
+              });
+              // Optional glitch flash
+              status.classList.add('glitch');
+              setTimeout(() => status.classList.remove('glitch'), 300);
+              form.reset();
+            } else {
+              status.textContent = '> Transmission failed. Please email directly.';
+            }
+          })
+          .catch(() => {
+            status.textContent = '> Transmission failed. Please email directly.';
+          });
+      };
+    }
+  }
+
+  /* -------------------------------------------------
+     INITIALISE ALL SECTIONS
+     ------------------------------------------------- */
+  function initAll() {
+    initSkills();
+    initCertifications();
+    initExperience();
+    initAbout();
+    initLogos();
+    initContactForm();
+  }
+
+  // Run after DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
 })();
